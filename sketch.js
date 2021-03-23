@@ -25,7 +25,7 @@ let page = 0;
 let imgLogo;
 let imgO;
 let imgStar;
-let radio = 640 / 480
+let radio = 840 / 680
 
 let waitTime = 5;
 let waitTimeFuncVar;
@@ -150,9 +150,9 @@ function draw() {
         textAlign(LEFT, TOP);
         // fill(255, 0, 0);
         text("Stage: " + String(parseInt(stage) + 1), 40, 10);
-        text("Count: " + stageResult[0] + ", " + stageResult[1], 40, 60);
-        text("Mark: " + Math.max(stageResult[0], stageResult[1]) + '/8', 40, 110);
-        text("Time Left: " + nextStageTime, 40, 160)
+        text("Count: " + stageResult[0] + ", " + stageResult[1], 40, 70);
+        text("Mark: " + Math.max(stageResult[0], stageResult[1]) + '/8', 40, 130);
+        text("Time Left: " + nextStageTime, 40, 190)
         
         
         /*text("Count: " + stageResult[0] + ", " + stageResult[1], 25, 30);
