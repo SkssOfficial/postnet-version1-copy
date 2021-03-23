@@ -158,8 +158,8 @@ function draw() {
         /*text("Count: " + stageResult[0] + ", " + stageResult[1], 25, 30);
         text("Mark: " + Math.max(stageResult[0], stageResult[1]) + '/8', 25, 80);*/
         
-        text("Left confidence: " + test1, 25, 230);   // Debuging reading
-        text("Right confidence: " + test2, 25, 280);   // Debuging reading
+        /*text("Left confidence: " + test1, 25, 230);   // Debuging reading
+        text("Right confidence: " + test2, 25, 280);   // Debuging reading*/
         /*test("leftKnee: " + test2, 25, 80);
         text("rightKnee: " + test3, 25, 130);
         */
