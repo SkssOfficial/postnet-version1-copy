@@ -25,7 +25,7 @@ let page = 0;
 let imgLogo;
 let imgO;
 let imgStar;
-let radio = 840 / 680
+let radio = 640 / 480
 
 let waitTime = 5;
 let waitTimeFuncVar;
