@@ -30,7 +30,7 @@ let radio = 840 / 680
 let waitTime = 5;
 let waitTimeFuncVar;
 
-let nextStageTime = 33;
+let nextStageTime = 60;
 let nextStageTimeVar;
 
 
