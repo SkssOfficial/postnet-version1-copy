@@ -33,9 +33,6 @@ let waitTimeFuncVar;
 let nextStageTime = 30;
 let nextStageTimeVar;
 
-let test1;
-let test2;
-let test3;
 
 // function preload() {
 //   imgLogo = loadImage('assets/logo.png');
@@ -190,8 +187,7 @@ function countMovement() {
                     break;
                 }
                 
-                test1 = leftKnee.confidence; // test
-                test2 = rightKnee.confidence; // test
+               
                 
                 if (rightKnee.y > leftKnee.y + poseOffset) {
                     stageResult[0] += 1
