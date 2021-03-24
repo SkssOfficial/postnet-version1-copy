@@ -13,7 +13,7 @@ let poseNet;
 let poses = [];
 let stage = 0;
 let stageResult = [0, 0]
-let poseOffset = 155
+let poseOffset = 10
 let confidenceOffset = 0.1
 let stopCounting = false
 
@@ -50,13 +50,7 @@ function setUpStepDetail() {
             stepDetail.innerHTML = "重複第1組動作，先提起右腿，然後放下；再提起左腿，然後放下；每次提腿時，雙手同時推向前面上方，共8次。"
             break;
         case '2':
-            stepDetail.innerHTML = "先提右腿，再提左腿，雙手同時輪流在左方和右方拍掌，共8次。"
-            break;
-        case '3':
             stepDetail.innerHTML = "重複第1組動作，先提起右腿，然後放下；再提起左腿，然後放下；每次提腿時，提腿稍高，雙手同時在腿下拍掌，共8次。"
-            break;
-        case '4':
-            stepDetail.innerHTML = "腰背略為離開椅背，兩臂屈曲，指尖向上，手肘提高至胸前，然後手肘向兩側張開再收回，共8次。"
             break;
         default:
             break;
@@ -182,6 +176,17 @@ function countMovement() {
 
         switch (String(stage)) {
             case '0':
+                if (leftKnee.confidence < confidenceOffset || rightKnee.confidence < confidenceOffset) {
+                    break;
+                }
+                
+               
+                
+                if (rightKnee.y > leftKnee.y + poseOffset) {
+                    stageResult[0] += 1
+                } else if (leftKnee.y > rightKnee.y + poseOffset) {
+                    stageResult[1] += 1
+                }
             case '1':
                 if (leftKnee.confidence < confidenceOffset || rightKnee.confidence < confidenceOffset) {
                     break;
@@ -197,15 +202,7 @@ function countMovement() {
                                 
                 break;
             case '2':
-            case '4':
-                if (leftWrist.y > leftElbow.y + poseOffset && leftWrist.confidence > confidenceOffset && leftElbow.confidence > confidenceOffset) {
-                    stageResult[0] += 1
-                } else if (rightWrist.y > rightElbow.y + poseOffset && rightWrist.confidence > confidenceOffset && rightElbow.confidence > confidenceOffset) {
-                    stageResult[1] += 1
-                }
-                break;
-            case '3':
-                if (leftKnee.y > leftElbow.y + poseOffset && leftKnee.confidence > confidenceOffset && leftElbow.confidence > confidenceOffset) {
+                   if (leftKnee.y > leftElbow.y + poseOffset && leftKnee.confidence > confidenceOffset && leftElbow.confidence > confidenceOffset) {
                     stageResult[0] += 1
                 } else if (rightKnee.y > rightElbow.y + poseOffset && rightKnee.confidence > confidenceOffset && rightElbow.confidence > confidenceOffset) {
                     stageResult[1] += 1
